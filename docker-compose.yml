@@ -1,8 +1,11 @@
 tensorflow:
     build: ./
     ports: 
-        - "8888:8888"
+      - "8888:8888"
+      - "6006:6006"
     volumes:
-        - "./content:/var/www:rw"
+      - "./content:/var/www:rw"
     working_dir: "/var/www"
+    environment:
+      - PYTHONPATH=/usr/local/src/models/research/slim
     command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=/var/www
