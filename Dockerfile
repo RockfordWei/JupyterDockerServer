@@ -15,7 +15,7 @@ RUN cd /usr && unzip $SRC/protobuf.zip && rm $SRC/protobuf.zip
 RUN apt-get install -y python3 python3-pip python3-dev python3-pil python3-lxml python3-tk python3-contextlib2 \
 python3-numpy python3-scipy python3-pandas python3-sklearn python3-matplotlib python3-seaborn python-opencv
 
-RUN pip3 install --upgrade pip tensorflow jupyter pytesseract tesseract cython
+RUN pip3 install --upgrade pip tensorflowjs jupyter pytesseract tesseract cython
 
 RUN cd $SRC/tf-coreml && python3 setup.py bdist_wheel && pip3 install -e .
 
