@@ -23,3 +23,5 @@ RUN cd $SRC/cocoapi/PythonAPI/ && python3 setup.py build_ext --inplace && python
 
 RUN cd $SRC/models/research && protoc object_detection/protos/*.proto --python_out=.
 RUN cd $SRC/models/research && python3 setup.py build && python3 setup.py install
+
+RUN pip3 install --upgrade coremltools
