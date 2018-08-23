@@ -12,6 +12,7 @@ RUN cd $SRC && git clone https://github.com/tensorflow/models
 RUN wget -O $SRC/protobuf.zip https://github.com/google/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip
 RUN cd /usr && unzip $SRC/protobuf.zip && rm $SRC/protobuf.zip
 
+RUN apt-get upgrade -y && apt-get update -y
 RUN apt-get install -y python3 python3-pip python3-dev python3-pil python3-lxml python3-tk python3-contextlib2 \
 python3-numpy python3-scipy python3-pandas python3-sklearn python3-matplotlib python3-seaborn python-opencv
 
